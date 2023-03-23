@@ -6,10 +6,18 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Divider } from "@mui/material";
 import Cards from "./Card";
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid";
+import { useGetAllDataQuery } from "../stores/apiServices";
+type DataType = {
+  name: string;
+  title: string;
+  bid: string;
+  image: string;
+};
 
 export default function OutlinedCard() {
- 
+  const { data, error, isLoading } = useGetAllDataQuery("");
+
   return (
     <Card sx={{ maxWidth: "100%", mt: "20px" }}>
       <CardContent>
@@ -48,20 +56,26 @@ export default function OutlinedCard() {
         </Box>
 
         <Divider sx={{ my: "20px" }} />
-
-    
-
         <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={{ xs: 2, md: 3, lg:4 }} columns={{ xs: 4, sm: 8, md: 12, lg: 16 }}>
-        {Array.from(Array(6)).map((_, index) => (
-          <Grid item xs={2} sm={4} md={4} key={index}>
-            <Cards />
+          <Grid
+            container
+            spacing={{ xs: 2, md: 3, lg: 4 }}
+            columns={{ xs: 4, sm: 8, md: 12, lg: 16 }}
+          >
+            {error ? (
+              <>Oh no, there was an error</>
+            ) : isLoading ? (
+              <>Loading...</>
+            ) : data && data.data ? (
+              data.data.map((product: DataType) => (
+                <Grid item xs={2} sm={4} md={4} key={product.name}>
+                  <Cards product={product} />
+                </Grid>
+              ))
+            ) : null}
           </Grid>
-        ))}
-      </Grid>
-    </Box>
+        </Box>
 
-       
       </CardContent>
     </Card>
   );
