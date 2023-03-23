@@ -13,6 +13,14 @@ import heroImage from "../Assets/images/Image.png";
 import { DPIconContent, DPIconThumbsUp } from "../Assets/icons";
 
 const HeroSection = () => {
+    const bull = (
+        <Box
+          component="span"
+          sx={{ display: 'inline-block', mx: '2px', transform: 'scale(1.5)', color:" #F79009",  }}
+        >
+          •
+        </Box>
+      );
   return (
     <Card sx={{ maxWidth: "100%", p: "20px", position:"relative" }}>
       <CardMedia
@@ -39,7 +47,7 @@ const HeroSection = () => {
               columnGap:"5px",
             }}
           >
-            <Typography component={'div'} variant={"body2"} sx={{backgroundColor:"#FFFAEB", color:"#B54708" , py:"2px", px:"8px", }}>Not Live</Typography>
+            <Typography component={'div'} variant={"body2"} sx={{backgroundColor:"#FFFAEB", color:"#B54708" , py:"2px", px:"8px", }}>{bull} Not Live</Typography>
             <Typography variant={"body2"} sx={{ color:"#475467" , py:"2px", px:"8px", }}>Layers Auction</Typography>
           </Box>
         </Box>
