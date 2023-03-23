@@ -8,6 +8,7 @@ import theme from "./theme";
 import heroImage from "./Assets/images/Image.png"
 import Header from "./Components/Header";
 import HeroSection from "./Components/HeroSection";
+import OutlinedCard from "./Components/CardWrappers";
 
 // import Markdown from './Markdown';
 
@@ -23,7 +24,7 @@ function App() {
       <Container maxWidth={false}>
         <Header />
        <HeroSection />
-      
+      <OutlinedCard />
       </Container>
     </ThemeProvider>
   );
