@@ -22,9 +22,9 @@ The Material UI development bundles contain the full library which can lead to s
 
 ## Getting Started
 
-Clone repository : https://github.com/Akius1/EasyCommerce
-Install depencies : npm install
-Start the application : npm run start
+1. Clone repository : https://github.com/Akius1/EasyCommerce
+2. Install depencies : npm install
+3. Start the application : npm run start
 
 ### Screenshot
 
