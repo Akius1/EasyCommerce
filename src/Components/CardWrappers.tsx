@@ -60,7 +60,7 @@ export default function OutlinedCard() {
           <Grid
             container
             spacing={{ xs: 2, md: 3, lg: 4 }}
-            columns={{ xs: 4, sm: 8, md: 12, lg: 16 }}
+            columns={{ xs: 2, sm: 8, md: 12, lg: 16 }}
           >
             {error ? (
               <>Oh no, there was an error</>
