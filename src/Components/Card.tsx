@@ -1,6 +1,15 @@
 import React from "react";
-import {Box,  Card, CardActions, CardContent, Button, Typography, Divider, CardMedia } from "@mui/material/";
-import {makeStyles} from "@mui/styles";
+import {
+  Box,
+  Card,
+  CardActions,
+  CardContent,
+  Button,
+  Typography,
+  Divider,
+  CardMedia,
+} from "@mui/material/";
+import { makeStyles } from "@mui/styles";
 
 import { ExtraFirstLetter } from "../helper";
 
@@ -10,36 +19,33 @@ type DataType = {
   bid: string;
   image: string;
 };
-type AuctionResponseType = {
-  success: string;
-  message: string;
-  data: Array<DataType>;
+
+type Props = {
+  product: DataType;
 };
+
 const useStyles = makeStyles({
-    flexGrow: {
-      flex: '1',
+  flexGrow: {
+    flex: "1",
+  },
+  button: {
+    backgroundColor: "#004CCC",
+    color: "#fff",
+    "&:hover": {
+      backgroundColor: "#fff",
+      color: "#004CCC",
+      // padding: "4px",
     },
-    button: {
-      backgroundColor: '#004CCC',
-      color: '#fff',
-      '&:hover': {
-        backgroundColor: '#fff',
-        color: '#004CCC',
-        // padding: "4px",
-    },
-    
   },
   cardactions: {
     paddingTop: 0,
     "&:last-child": {
-      paddingBottom: 8
-    }
+      paddingBottom: 8,
+    },
   },
-
-})
-const Cards: React.FC<any> = ({ product }) => {
-    
-      const classes = useStyles()
+});
+const Cards: React.FC<Props> = ({ product }) => {
+  const classes = useStyles();
 
   const nameAbbrev = (
     <Box
@@ -130,7 +136,10 @@ const Cards: React.FC<any> = ({ product }) => {
         <Divider />
       </CardContent>
       <CardActions className={classes.cardactions}>
-        <Button sx={{ width: "100%", textTransform: "capitalize", }} className={classes.button}>
+        <Button
+          sx={{ width: "100%", textTransform: "capitalize" }}
+          className={classes.button}
+        >
           Add to wishlist
         </Button>
       </CardActions>
