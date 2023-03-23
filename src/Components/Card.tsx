@@ -89,7 +89,7 @@ const Cards: React.FC<Props> = ({ product }) => {
           {nameAbbrev}
           <Typography sx={{ fontSize: 12, fontWeight: "600" }} component="div">
             {product.name}
-            <span style={{ color: "#98A2B3" }}>(Highest Bidder)</span>
+            <span style={{ color: "#98A2B3" }}> (Highest Bidder)</span>
           </Typography>
         </Box>
 
